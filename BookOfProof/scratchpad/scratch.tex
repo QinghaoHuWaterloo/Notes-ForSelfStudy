@@ -1,0 +1,174 @@
+\documentclass[10pt, leqno21]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{gensymb}
+\pgfplotsset{width=10cm,compat=1.9}
+
+% --- Screen-Friendly Geometry (修长无边框模式) ---
+% 保持A4标准高度(297mm)，将纸张宽度裁减至160mm。
+% 左右各留10mm的边距，这样正文宽度刚好是140mm（原版无geometry的最佳阅读宽度）。
+\usepackage[
+    paperheight=297mm, 
+    paperwidth=160mm, 
+    left=10mm,
+    right=10mm,
+    top=15mm, 
+    bottom=15mm
+]{geometry}
+
+% --- Eye-Care Background (护眼米色背景) ---
+\usepackage{pagecolor}
+\definecolor{sepiabg}{RGB}{244,236,220}
+\pagecolor{sepiabg}
+
+% --- Screen-Friendly Hyperlinks ---
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black,
+    citecolor=green!50!black
+]{hyperref}
+
+% --- Homework Header Setup ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+% 宽度恢复了一些，页眉可以写全名字
+\lhead{\textbf{Qinghao Hu}} 
+\chead{\textbf{MATH 135}} 
+\rhead{\textbf{Assignment 1}} 
+\cfoot{\thepage} 
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Homework Environments ---
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{problem}{Problem} 
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% --- Cambridge-style semantic (unnumbered) environments ---
+\theoremstyle{definition}
+\newtheorem*{axiom}{Axiom}
+\newtheorem*{assumption}{Assumption}
+\newtheorem*{notation}{Notation}
+
+\newenvironment{solution}
+  {\begin{proof}[\textbf{Solution}]}
+  {\end{proof}}
+
+% --- Custom Commands ---
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\newcommand{\mypic}[3]{%
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=#3\textwidth]{#1}
+    \caption{#2}
+  \end{figure}
+}
+
+% --- Lists Configuration ---
+\setlist[itemize]{label=--}
+\setlist[itemize,2]{label=$\circ$}
+
+\begin{document}
+\subsubsection*{Q20}
+\begin{proof}
+  Suppose for the contradiction, the curve $x^2 + y^2 + 3 = 0$ has rational points. 
+
+  Then, there exist $x, y \in \Q$ that $x^2 + y^2 = 3$.
+
+  Since $x$ and $y$ are rational, we can write them with a common denominator: 
+
+  \begin{align*}
+    x = \frac{a}{c} \\
+    y = \frac{b}{c}
+  \end{align*}
+
+  where, 
+
+  $$\exists a, b, c \in \Z, c \neq 0, gcd(a, b, c) = 1.$$
+
+  Let us sub x and y into the curve, 
+  \begin{align*}
+    \left(\frac{a}{c}\right)^2 + \left(\frac{b}{c}\right)^2 &= 3 \\
+    \frac{a^2}{c^2} + \frac{b^2}{c^2} &= 3 \\
+    a^2 + b^2 &= 3c^2
+  \end{align*}
+  By lemma, we know under modulo 4, if n is odd, $n^2 \equiv 1\pmod{4}$. If n is even, $n^2 \equiv0\pmod{4}$.
+
+  Case 1: $c$ is odd
+
+  We get:
+  \[
+    a^2 + b^2 \equiv 3\pmod{4}
+  \]
+
+  This is impossible to achieve. 
+
+  Case 2: $c$ is even
+
+  We get:
+  \[
+    a^2 + b^2 \equiv 0\pmod{4}
+  \]
+
+  This is possible to achieve when $a$ is even and $b$ is even. 
+
+  However, since $\gcd(a, b, c) = 1$, a, b, c cannot be all even.
+
+  Therefore, curve $x^2 + y^2 - 3 = 0$ does not have rational points. 
+
+\end{proof}
+
+\subsubsection*{Q21}
+\begin{proof}
+  Suppose, for contradiction, $x^2 + y^2 - 3^k = 0$ has rational solutions for k an odd, positive integer. 
+
+  We get $k = 2n + 1, \exists n \in \N$, according to the definition of odd. 
+
+  Let us sub $k = 2n + 1$ into $x^2 + y^2 - 3^k = 0$,
+  \begin{align*}
+    x^2 + y^2 &= 3^{2n + 1} \\
+    x^2 + y^2 &= 3 \times 3^{2n} \\
+    x^2  + y^2  &= 3 \times 9^n \\
+    a^2 + b^2 &= 3 \cdot 9^nc^2\pmod{4}\\
+    a^2 + b^2  &= 3c^2\pmod{4}
+  \end{align*}
+\end{proof}
+
+\subsubsection*{Q24}
+\begin{proof}
+  Suppose, for contradiction, JJJJ
+\end{proof}
+
+\end{document}
+

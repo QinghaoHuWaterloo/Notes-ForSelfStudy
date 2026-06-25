@@ -1,0 +1,80 @@
+\subsection{Contrapositive Proof}
+According to the the previous chapter, one may knows that $P \Rightarrow Q \equiv \neg Q \Rightarrow \neg P$ where $P$ and $Q$ are two statements. 
+These two statements share the same true table. To prove that $P \Rightarrow Q$ is true, it suffices to instead prove that $\neg Q \Rightarrow \neg P$ is true. 
+
+\subsubsection{Outline for Contrapositive Proof}
+\begin{proposition}
+    If P, then Q.
+    \begin{proof}
+        Suppose $\neg Q$
+        $$\cdots$$
+        $$\cdots$$
+        Therefore $\neg P$
+    \end{proof}
+\end{proposition}
+
+\begin{example}
+    Prove the following proposition.
+    \begin{proposition}
+        Suppose $x, y \in \Z$. If $5 \nmid xy$, then $5 \nmid x$ and $5 \nmid y$.
+    \end{proposition}
+    Suppose $\neg \left(5 \nmid x \wedge 5 \nmid y\right)$, it equals to $(5 \mid x) \vee (5 \mid y)$. 
+    
+    We consider these possibilities separately.
+    
+    \textbf{Case 1}:$5 \mid x$
+    \begin{align*}
+        &x = 5a, a \in \Z \\
+        &\Rightarrow xy = (5a)y = 5(ay)
+    \end{align*}
+    Therefore $5 \mid xy$ by the definition.
+    
+    \textbf{Case 2}: $5 \mid y$
+    \begin{align*}
+        &y = 5a, a \in \Z \\
+        &\Rightarrow xy = x(5a) = 5(xa)
+    \end{align*}
+    Therefore $5 \mid xy$ by the definition.
+
+    The above cases show that $5 \mid xy$, so it is not true that $5 \nmid xy$.
+\end{example}
+
+\subsection{Congruence of Integers}
+\begin{definition}
+    [Congruent Modulo]
+    Given integers a and b and $n \in \N$, we say that a and b are congruent modulo n if $n \mid (a - b)$. We express this as $a \equiv b \pmod{n}$. 
+    If a and b are not congruent modulo n, we write this as $a \not\equiv b \pmod{n}$.
+\end{definition}
+
+\begin{proposition}
+    \[
+        \forall a, b \in \Z, c \in \N, a \equiv b \pmod{c} \Rightarrow a^2 \equiv b^2 \pmod{c}
+    \]
+\end{proposition}
+\begin{proof}
+    \begin{align*}
+        &a - b = ck, k \in Z \\
+        &\Rightarrow (a + b)(a - b) = ck(a + b) \\ 
+        &\Rightarrow a^2 - b^2 = ck(a + b) \\
+        &\Rightarrow a^2 - b^2 = cd, d = k(a + b) \in N \\
+        &\Rightarrow a^2 \equiv b^2 \pmod{n}
+    \end{align*}
+\end{proof}
+
+\subsection{Mathematical Writing}
+\begin{enumerate}
+    \item Begin each sentence with a word, not a mathematical symbol. 
+    \item End each sentence with a period. 
+    \item Separate mathematical symbols and expressions with words. 
+    \item Avoid misuse of symbols. 
+    \item Avoid using unnecessary symbols. 
+    \item Use the first person plural. 
+    \item Use the active voice. 
+    \item Explain every new symbol. 
+    \item Watch out for "it". 
+    \item Since, because, as, for so. 
+    \item Thus, hence, therefore, consequently. 
+    \item Clarity is the gold standard of mathematical writing. 
+\end{enumerate}
+
+\newpage

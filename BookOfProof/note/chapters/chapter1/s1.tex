@@ -1,0 +1,62 @@
+\subsection{Introduction to Sets}
+\begin{definition}
+    [Set] A set is a collection of stuff, without regards to order. Elements in a set are only counted once. 
+    For example if $a = 2$, $b = c = 1$, then $A = \left\{a, b, c\right\}$ has only two numbers. 
+
+    A set is called an infinite set if it has infinitely many elements; otherwise it is called a finite set
+\end{definition}
+\begin{example}
+    $\left \{2, 4, 6, 8\right \}$ is a set which has four numbers. 
+\end{example}
+
+\begin{example}
+    Common sets and symbols used to denote them:
+    \begin{itemize}
+        \item $\N = \left\{1, 2, 3, \cdots\right\}$ is the natural number
+        \item $\N_0 = \left\{0, 1, 2, 3, \cdots\right\}$ is the natural number with 0
+        \item $\Z = \left\{\cdots, -2, -1, 0, 1, 2, \cdots\right\}$ is the integers
+        \item $\Q = \left\{\tfrac{a}{b} : a, b \in \Z, b \neq 0\right\}$ is the rational number
+        \item $\R$ is the real numbers 
+        \item $\C$ is the complex numbers
+    \end{itemize}
+\end{example}
+
+\begin{definition}
+    [Equality of sets] A is equal to B, written as $A = B$, if 
+    $$(\forall x)x \in A \iff x \in B$$
+\end{definition}
+
+\begin{example}
+    $\left\{2, 4, 6, 8\right\} = \left\{2, 4, 8, 6\right\}$ because the elements are identical.; 
+    but $\left\{2, 4, 6, 7\right\} \neq \left\{2, 4, 6, 8\right\}$
+\end{example}
+
+Sets need not have just numbers as elements. 
+The set $B = \left\{T, F\right\}$ consists of two letters.
+The set $C = \left\{a, e, i, o, u\right\}$ consists of the lowercase vowels in the English Alphabet. 
+It is even possible for a set to have other sets as elements. 
+Consider $E = \left\{1, \left\{2, 3\right\}, \left\{2, 4\right\}\right\}$, which has 1 number and two sets as its elements.
+
+\begin{definition}
+    [Cardinality/Size of set] Cardinality or size is the number of elements a set has. If $X$ is a finite set, the size of set $X$ is denoted as $\left|X\right|$.
+\end{definition}
+
+\begin{definition}
+    [Empty set] The empty set is the set $\left\{\right\}$ that has no elements. We denote is as $\emptyset$. $\left|\emptyset\right| = 0$
+\end{definition}
+\begin{remark}
+    Don't write $\left\{\emptyset\right\}$ when you mean $\emptyset$.
+\end{remark}
+
+\begin{definition}
+    [Set-builder Notatoin] A notation use to describe sets that are too big or complex to list between braces. 
+    In general, a set $X$ written with set-builder notation has the syntax
+    $$X = \left\{\text{expression} : \text{rule}\right\}$$
+\end{definition}
+
+\begin{example}
+    \begin{equation*}
+        E = \left\{2n : n \in \Z\right\}
+    \end{equation*}
+    means "E is the set of all n in $\Z$ such that $n$ is even".
+\end{example}

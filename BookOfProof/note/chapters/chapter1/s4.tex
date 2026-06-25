@@ -1,0 +1,86 @@
+% \subsection{Power Sets}
+\begin{definition}
+    [Power Set] If A is a set, the power set of A is another set, denoted as $p(A)$ and defined to be the set of all subsets of A. 
+    In symbols, $p(A) = \left\{X  \mid  X \subseteq A\right\}$
+\end{definition}
+\begin{remark}
+    If A is a finite set, then $\left|p(A)\right| = 2^{\left|A\right|}$
+\end{remark}
+% \subsection{Intersection, union, set difference}
+\begin{definition}
+    [Intersection, union, and set difference]
+    Given two sets A and B, we define the following:
+    \begin{itemize}
+        \item Intersection $A \cap B = \left\{x \mid x \in A \text{ and } x \in B\right\}$
+        \item Union $A \cup B = \left\{x \mid x \in A \text{ or } x \in B\right\}$
+        \item Difference $A - B = \left\{x \mid x \in A \text{ and } x \notin B\right\}$
+    \end{itemize}
+\end{definition}
+
+Observe that for any sets $X$ and $Y$ it is always true that $X \cup Y = Y \cup X$ and $X \cap Y = Y \cap X$, but in general $X - Y \neq Y - X$.
+
+\begin{definition}
+    [Complement]
+    Let A be a set with Universal set U. The complement of A, denoted $\bar{A}$, is the set $\bar{A} = U - A$.
+\end{definition}
+
+When a mathematical problem involves lots of sets, it is often convenient to keep track of them by using subscripts.
+Thus instead of denoting three sets $A$, B, and C, we might instead write them as $A_1$, $A_2$, and $A_3$. These are called indexed sets. 
+\begin{definition}
+    Supposed $A_1, A_2, \cdots, A_n$ are sets. Then 
+    \begin{equation*}
+        A_1 \cup A_2 \cup A_3 \cup \cdots \cup A_n
+        =
+        \left\{
+        x \mid x \in A_i \text{ for at least one set } A_i,\ 1 \leq i \leq n
+        \right\}
+    \end{equation*}  
+    \begin{equation*}
+        A_1 \cap A_2 \cap A_3 \cap \cdots \cup A_n
+        =
+        \left\{
+            x \mid x \in A_i \text{ for every set } A_i, \text{ for } 1 \leq i \leq n
+        \right\}
+    \end{equation*}
+\end{definition}
+
+Here are the notations for indexed sets:
+Given sets $A_1, A_2, A_3, \cdots, A_n$, we define 
+\begin{equation*}
+    \bigcup_{i = 1}^{n} A_i = A_1 \cup A_2 \cup A_3 \cup \cdots \cup A_n
+\end{equation*}
+and 
+\begin{equation*}
+    \bigcap_{i = 1}^{n} A_i = A_1 \cap A_2 \cap A_3 \cap \cdots \cap A_n
+\end{equation*}
+
+The notation is also used when the list of sets $A_1, A_2, A_3, \cdots$ is infinite. 
+\begin{equation*}
+    \bigcup_{i = 1}^{\infty} A_i = A_1 \cup A_2 \cup A_3 \cup \cdots \cup A_n
+    =
+    \left\{
+        x \mid x \in A_i \text{ for at least one set of } A_i, \text{ with } 1 \leq i
+    \right\}
+\end{equation*}
+and 
+\begin{equation*}
+    \bigcap_{i = 1}^{\infty} A_i = A_1 \cap A_2 \cap A_3 \cap \cdots \cap A_n
+     =
+    \left\{
+        x \mid x \in A_i \text{ for every set } A_i, \text{ with } 1 \leq i
+    \right\}
+\end{equation*}
+
+We can also have another set of notation for indexed sets. 
+\begin{definition}
+    \[
+        \bigcup_{a \in I} A_a = \left\{
+            x \mid x \in A_a \text{ for at least one set } A_a \text{ with } a \in I
+        \right\}
+    \]
+    \[
+        \bigcap_{a \in I} A_a = \left\{
+            x \mid x \in A_a \text{ for every set } A_a \text{ with } a \in I
+        \right\}
+    \]
+\end{definition}
